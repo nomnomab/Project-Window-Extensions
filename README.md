@@ -11,6 +11,7 @@ This aims to improve the usability of the project window.
 
 #### Copy/Paste/Cut Support
 - Allows for copying, pasting, and cutting assets directly in the editor
+- Works for folders and assets.
 - Default keybinds
   - These keybinds will need to be rebound via the `Shortcut Manager` due to it conflicting with Unity's native keybinds
 
