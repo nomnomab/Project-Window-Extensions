@@ -25,7 +25,18 @@ This aims to improve the usability of the project window.
 
 - Gives a visual when in either copy or cut mode
 - Works in both single and double column mode
+- Can be found under `IO/*`
 #### Copy Mode
 ![Copy Gif](./Assets~/copy.gif)
 #### Cut Mode
 ![Cut Gif](./Assets~/cut.gif)
+
+### Additional Create Options
+- Added types:
+  - Text File
+  - JSON File
+  - XML File
+  - CSV File
+- Can be found under `Create/Text Files/*`
+
+![Additional Text Files](./Assets~/additional_text.png)
