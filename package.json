@@ -2,7 +2,7 @@
   "name": "com.nomnom.project-window-extensions",
   "version": "1.0.0",
   "displayName": "Project Window Extensions",
-  "description": "Provides extra functionality of the default Project Window.",
+  "description": "This aims to improve the usability of the project window.",
   "unity": "2020.3",
   "unityRelease": "20f1",
   "licensesUrl": "https://choosealicense.com/licenses/mit/",
