@@ -84,7 +84,7 @@ namespace Nomnom.ProjectWindowExtensions.Editor {
 		
 		[MenuItem("Assets/IO/Paste %v", true)]
 		private static bool DoPasteValidate() {
-			return DefaultValidation() && (_copyBuffer != null && _copyBuffer.Count > 0) || (_cutBuffer != null && _cutBuffer.Count > 0);
+			return DefaultValidation(false) && (_copyBuffer != null && _copyBuffer.Count > 0) || (_cutBuffer != null && _cutBuffer.Count > 0);
 		}
 		
 		[MenuItem("Assets/IO/Cut %x", false, PRIORITY)]
@@ -124,14 +124,18 @@ namespace Nomnom.ProjectWindowExtensions.Editor {
 			return DefaultValidation() && _cutBuffer != null && _cutBuffer.Count > 0;
 		}
 
-		private static bool DefaultValidation() {
-			return ValidateNotRestrictedPath() && CollectAssetItems(ref _tmpBuffer);
+		private static bool DefaultValidation(bool restrictAssets = true) {
+			return ValidateNotRestrictedPath(restrictAssets) && CollectAssetItems(ref _tmpBuffer);
 		}
 		
-		private static bool ValidateNotRestrictedPath() {
+		private static bool ValidateNotRestrictedPath(bool restrictAssets = true) {
 			string path = AssetDatabase.GetAssetPath(Selection.activeObject);
 
-			return !string.IsNullOrEmpty(path) && !path.Equals("Assets") && !path.StartsWith("Packages");
+			if (restrictAssets && path.Equals("Assets")) {
+				return false;
+			}
+
+			return !string.IsNullOrEmpty(path) && !path.StartsWith("Packages");
 		}
 
 		private static void OnProjectGUI(string guid, Rect selectionRect) {
@@ -163,9 +167,18 @@ namespace Nomnom.ProjectWindowExtensions.Editor {
 			bool hasFolderSelected = false;
 			
 			foreach (Object o in objects) {
+				if (!AssetDatabase.IsMainAsset(o)) {
+					continue;
+				}
+				
 				string path = AssetDatabase.GetAssetPath(o).Replace('/', '\\');
 				string[] parentSplit = path.Split('\\');
 				string parent = Path.GetDirectoryName(path);
+
+				if (string.IsNullOrEmpty(parent)) {
+					continue;
+				}
+				
 				AssetItem item = new AssetItem(path);
 
 				if (item.IsFolder) {
