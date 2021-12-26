@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿#if NOM_PROJECT_MORE_FILES
+using System.IO;
 using UnityEditor;
 using UnityEngine;
 
@@ -70,7 +71,7 @@ namespace Nomnom.ProjectWindowExtensions.Editor {
 			if (EditorApplication.timeSinceStartup >= _renameTime) {
 				if (!_enableRename) {
 					EditorApplication.update -= EngageRenameMode;
-					GetFocusedWindow("General/Project").SendEvent(new Event {
+					EditorExtensions.GetFocusedWindow("General/Project").SendEvent(new Event {
 						keyCode = KeyCode.F2,
 						type = EventType.KeyDown
 					});
@@ -82,14 +83,6 @@ namespace Nomnom.ProjectWindowExtensions.Editor {
 				_renameTime = EditorApplication.timeSinceStartup + 0.2d;
 			}
 		}
-
-		private static EditorWindow GetFocusedWindow(string window) {
-			FocusOnWindow(window);
-			return EditorWindow.focusedWindow;
-		}
-
-		private static void FocusOnWindow(string window) {
-			EditorApplication.ExecuteMenuItem("Window/" + window);
-		}
 	}
 }
+#endif

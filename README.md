@@ -40,3 +40,6 @@ This aims to improve the usability of the project window.
 - Can be found under `Create/Text Files/*`
 
 ![Additional Text Files](./Assets~/additional_text.png)
+
+### Package Settings
+- Parts of this package can be enabled/disabled via the preferences menu, located in `Edit/Preferences/Project Window Extensions`
