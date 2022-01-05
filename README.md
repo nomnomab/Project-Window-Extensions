@@ -7,6 +7,9 @@ This aims to improve the usability of the project window.
 - Package Manager
   - Add through git url `https://github.com/nomnomab/Project-Window-Extensions.git`
 
+### Package Settings
+- Parts of this package can be enabled/disabled via the preferences menu, located in `Edit/Preferences/Project Window Extensions`
+
 ## Current Enhancements
 
 #### Copy/Paste/Cut Support
@@ -40,6 +43,3 @@ This aims to improve the usability of the project window.
 - Can be found under `Create/Text Files/*`
 
 ![Additional Text Files](./Assets~/additional_text.png)
-
-### Package Settings
-- Parts of this package can be enabled/disabled via the preferences menu, located in `Edit/Preferences/Project Window Extensions`
