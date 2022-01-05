@@ -1,7 +1,9 @@
 {
     "name": "com.nomnom.project-window-extensions.Editor",
     "rootNamespace": "Nomnom.ProjectWindowExtensions",
-    "references": [],
+    "references": [
+        "com.nomnom.easier-custom-preferences.Editor"
+    ],
     "includePlatforms": [
         "Editor"
     ],
