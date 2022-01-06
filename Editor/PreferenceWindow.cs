@@ -5,8 +5,8 @@ using UnityEditor;
 using UnityEngine;
 
 namespace Nomnom.ProjectWindowExtensions.Editor {
-	[PreferencesName("Project Window Extensions")]
-	[PreferencesKeyword("Project", "Window", "Extensions")]
+	[PreferencesName("Project Window Extensions", "Nomnom")]
+	[PreferencesKeywords("Project", "Window", "Extensions")]
 	internal static class PreferenceWindow {
 		private const string DEF_COPY_PASTE = "NOM_PROJECT_COPY_PASTE";
 		private const string DEF_MORE_FILES = "NOM_PROJECT_MORE_FILES";
