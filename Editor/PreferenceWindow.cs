@@ -22,8 +22,8 @@ namespace Nomnom.ProjectWindowExtensions.Editor {
 
 		public static Settings OnDeserialize() {
 			return new Settings {
-				UseCopyPaste = EditorPrefs.GetBool(KEY_USE_COPY_PASTE, true),
-				UseAdditionalFiles = EditorPrefs.GetBool(KEY_USE_ADDITIONAL_FILES, true),
+				UseCopyPaste = EditorPrefs.GetBool(KEY_USE_COPY_PASTE, false),
+				UseAdditionalFiles = EditorPrefs.GetBool(KEY_USE_ADDITIONAL_FILES, false),
 			};
 		}
 
@@ -34,7 +34,9 @@ namespace Nomnom.ProjectWindowExtensions.Editor {
 		
 		public static void OnGUI(string searchContext, Settings obj) {
 			EditorGUI.indentLevel++;
+			EditorGUILayout.HelpBox("Shows context options for copying and pasting assets in \"IO/*\".", MessageType.Info);
 			obj.UseCopyPaste = EditorGUILayout.ToggleLeft(_useCopyPasteText, obj.UseCopyPaste);
+			EditorGUILayout.HelpBox("Shows context options for creating additional text file types in \"Assets/Create/Text Files/*\".", MessageType.Info);
 			obj.UseAdditionalFiles = EditorGUILayout.ToggleLeft(_useAdditionalFilesText, obj.UseAdditionalFiles);
 			EditorGUI.indentLevel--;
 

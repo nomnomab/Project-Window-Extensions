@@ -9,6 +9,7 @@ This aims to improve the usability of the project window.
 
 ### Package Settings
 - Parts of this package can be enabled/disabled via the preferences menu, located in `Edit/Preferences/Project Window Extensions`
+- Everything is disabled by default.
 
 ## Current Enhancements
 
@@ -43,3 +44,6 @@ This aims to improve the usability of the project window.
 - Can be found under `Create/Text Files/*`
 
 ![Additional Text Files](./Assets~/additional_text.png)
+
+## Additional Information
+- [Trello Board](https://trello.com/b/h7sMCsTR/my-packages)
