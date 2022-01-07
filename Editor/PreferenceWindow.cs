@@ -33,14 +33,20 @@ namespace Nomnom.ProjectWindowExtensions.Editor {
 		}
 		
 		public static void OnGUI(string searchContext, Settings obj) {
+			GUI.enabled = !EditorApplication.isCompiling;
+
+			if (!GUI.enabled) {
+				EditorGUILayout.HelpBox("The Editor is currently recompiling...", MessageType.Info);
+			}
+			
 			EditorGUI.indentLevel++;
+			EditorGUI.BeginChangeCheck();
 			EditorGUILayout.HelpBox("Shows context options for copying and pasting assets in \"IO/*\".", MessageType.Info);
 			obj.UseCopyPaste = EditorGUILayout.ToggleLeft(_useCopyPasteText, obj.UseCopyPaste);
 			EditorGUILayout.HelpBox("Shows context options for creating additional text file types in \"Assets/Create/Text Files/*\".", MessageType.Info);
 			obj.UseAdditionalFiles = EditorGUILayout.ToggleLeft(_useAdditionalFilesText, obj.UseAdditionalFiles);
-			EditorGUI.indentLevel--;
-
-			if (GUILayout.Button("Apply")) {
+			
+			if (EditorGUI.EndChangeCheck()) {
 				OnSerialize(obj);
 						
 				// update preprocessors
@@ -66,6 +72,7 @@ namespace Nomnom.ProjectWindowExtensions.Editor {
 				PlayerSettings.SetScriptingDefineSymbolsForGroup(EditorUserBuildSettings.selectedBuildTargetGroup, string.Join(";", allDefines));
 				AssetDatabase.Refresh();
 			}
+			EditorGUI.indentLevel--;
 		}
 		
 		internal sealed class Settings {

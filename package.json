@@ -1,6 +1,6 @@
 {
   "name": "com.nomnom.project-window-extensions",
-  "version": "1.3.2",
+  "version": "1.3.3",
   "displayName": "Project Window Extensions",
   "description": "This aims to improve the usability of the project window.",
   "unity": "2020.3",

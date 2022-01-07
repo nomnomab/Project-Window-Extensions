@@ -1,5 +1,5 @@
-﻿using System.Collections.Generic;
-#if NOM_PROJECT_COPY_PASTE
+﻿#if NOM_PROJECT_COPY_PASTE
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using UnityEditor;
