@@ -43,6 +43,3 @@ This aims to improve the usability of the project window.
 - Can be found under `Create/Text Files/*`
 
 ![Additional Text Files](./Assets~/additional_text.png)
-
-## Additional Information
-- [Trello Board](https://trello.com/b/h7sMCsTR/my-packages)
