@@ -34,10 +34,6 @@ This aims to improve the usability of the project window.
 #### Cut Mode
 ![Cut Gif](./Assets~/cut.gif)
 
-#### Folder Import Options
-![Folder Import Image](./Assets~/folder_import.png)
-- Allows you to mark folders for preset imports rather than being restricted to global ones.
-
 ### Additional Create Options
 - Added types:
   - Text File
